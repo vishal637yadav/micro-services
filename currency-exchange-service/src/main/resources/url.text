@@ -1,0 +1,7 @@
+Currency Exchange Service
+http://localhost:8000/currency-exchange/form/USD/to/INR
+localhost:8000/currency-exchange/form/USD/to/INR
+
+H2-Database URL
+http://localhost:8000/h2-console
+
