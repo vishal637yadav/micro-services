@@ -1,7 +1,11 @@
 Currency Exchange Service
-http://localhost:8000/currency-exchange/form/USD/to/INR
-localhost:8000/currency-exchange/form/USD/to/INR
+http://localhost:8000/currency-exchange/from/EUR/to/INR
+localhost:8000/currency-exchange/from/USD/to/INR
 
 H2-Database URL
 http://localhost:8000/h2-console
 
+
+Currency Conversion Service
+http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/20
+localhost:8100/currency-conversion/from/USD/to/INR/quantity/20
