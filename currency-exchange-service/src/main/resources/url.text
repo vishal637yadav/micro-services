@@ -12,3 +12,18 @@ localhost:8100/currency-conversion/from/USD/to/INR/quantity/20
 
 Using feign--framework
 http://localhost:8100/currency-conversion-feign/from/AUS/to/INR/quantity/10
+
+API GATEWAY :
+CURRENCY-EXCHANGE-SERVICE (name registered with eureka server)
+http://localhost:8765/CURRENCY-EXCHANGE-SERVICE/currency-exchange/from/EUR/to/INR
+currency-exchange-service
+http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+Currency Conversion Service
+http://localhost:8765/CURRENCY-CONVERSION-SERVICE/currency-conversion/from/USD/to/INR/quantity/20
+http://localhost:8765/currency-conversion-service/currency-conversion/from/EUR/to/INR/quantity/10
+
+http://localhost:8765/CURRENCY-CONVERSION-SERVICE/currency-conversion-feign/from/USD/to/INR/quantity/20
+http://localhost:8765/currency-conversion-service/currency-conversion-feign/from/EUR/to/INR/quantity/10
+
+
