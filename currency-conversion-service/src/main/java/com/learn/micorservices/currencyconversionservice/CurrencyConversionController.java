@@ -1,5 +1,6 @@
 package com.learn.micorservices.currencyconversionservice;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,7 +41,32 @@ public class CurrencyConversionController {
                 currencyConversion.getQuantity(),
                 currencyConversion.getConversionMultiple(),
                 quantity.multiply(currencyConversion.getConversionMultiple()),
-                currencyConversion.getEnvironment());
+                currencyConversion.getEnvironment()+" rest template");
 
     }
+
+    @Autowired
+    private CurrencyConversionProxy currencyConversionProxy;
+
+    @GetMapping("/currency-conversion-feign/from/{from}/to/{to}/quantity/{quantity}")
+    public CurrencyConversion calculateCurrencyConversionFeign(
+            @PathVariable String from,
+            @PathVariable String to,
+            @PathVariable BigDecimal quantity
+    ){
+
+        CurrencyConversion currencyConversion = currencyConversionProxy.retrieveExchangeValue(from,to);
+        System.out.println("----using feign framework----");
+
+        return new CurrencyConversion(
+                currencyConversion.getId(),
+                currencyConversion.getFrom(),
+                currencyConversion.getTo(),
+                currencyConversion.getQuantity(),
+                currencyConversion.getConversionMultiple(),
+                quantity.multiply(currencyConversion.getConversionMultiple()),
+                currencyConversion.getEnvironment()+" feign");
+
+    }
+
 }
