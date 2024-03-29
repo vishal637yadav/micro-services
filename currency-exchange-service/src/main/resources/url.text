@@ -26,4 +26,8 @@ http://localhost:8765/currency-conversion-service/currency-conversion/from/EUR/t
 http://localhost:8765/CURRENCY-CONVERSION-SERVICE/currency-conversion-feign/from/USD/to/INR/quantity/20
 http://localhost:8765/currency-conversion-service/currency-conversion-feign/from/EUR/to/INR/quantity/10
 
+After changing URI:
+http://localhost:8765/currency-exchange/from/USD/to/INR
+http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
+http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
 
